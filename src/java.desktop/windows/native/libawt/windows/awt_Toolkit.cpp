@@ -3225,7 +3225,7 @@ LRESULT AwtToolkit::InvokeInputMethodFunction(UINT msg, WPARAM wParam, LPARAM lP
         return m_inputMethodData;
     } else {
         if (PostMessage(msg, wParam, lParam)) {
-            ::WaitForSingleObject(m_inputMethodWaitEvent, INFINITE);
+            ::WaitForSingleObject(m_inputMethodWaitEvent, 200);
             return m_inputMethodData;
         }
         return 0;
