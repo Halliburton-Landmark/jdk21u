@@ -623,8 +623,10 @@ final class WInputMethod extends InputMethodAdapter
                             y = pt.y + size.height;
                     }
                 }
-
-                openCandidateWindow(awtFocussedComponentPeer, x, y);
+                
+                if(awtFocussedComponentPeer != null) {
+                	openCandidateWindow(awtFocussedComponentPeer, x, y);
+                }
             }
         };
         WToolkit.postEvent(WToolkit.targetToAppContext(source),
